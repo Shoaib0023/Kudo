@@ -1,1 +1,1 @@
-web: gunicorn intro-to-apis-flask:app
+web: gunicorn app:app
