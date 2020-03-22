@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Kudo</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/index.css') }}">
+    </head>
+<body>
+    <div class="row">
+      <!-- Recent Compliment Column -->
+      <div class="col-md-6 recent-wrapper">
+        <div class="text-center recent-inner">
+          <h4 class="display-4 recent-heading mb-5">Recent Compliments</h4>
+          {% if messages %}
+            {% for message in messages %}
+              <p>{{ message.body }}</p>
+            {% endfor %}
+
+          {% else %}
+            <p>No compliments yet but you can compliment your loved ones now.</p>
+          {% endif %}
+
+        </div>
+
+      </div>
+       <!-- / Recent Compliment Column -->
+
+
+      <!-- Sent Compliment Column -->
+      <div class="col-md-6 send-compliment-wrapper">
+          <div class="send-compliment-inner">
+            <div class="error">
+              {% for flash_message in get_flashed_messages() %}
+                <div class="flash">{{ flash_message }}</div>
+              {% endfor %}
+            </div>
+            <h4 class="display-4 sent-heading mb-5">Send a Compliment</h4>
+          </div>
+
+        <form action="/add-compliment" method="post">
+          <div class="row justify-content-center mb-4">
+            <div class="col-md-5">
+                <label for="to">To</label>
+                <input type="text" class="form-control" placeholder="+917017265725" name="to">
+            </div>
+            <div class="col-md-5">
+                <label for="sender">Your Name</label>
+                <input type="text" class="form-control" placeholder="Shoaib" name="sender">
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-5">
+                <label for="receiver">Person To Compliment</label>
+                <input type="text" class="form-control" placeholder="Friend" name="receiver">
+            </div>
+            <div class="col-md-5">
+                <label for="compliment">Compliment</label>
+                <textarea name="compliment" class="form-control" placeholder="An amazing person."></textarea>
+            </div>
+          </div>
+
+          <div class="row justify-content-around">
+            <div class="col-md-10">
+              <button class="btn btn-block send-btn mt-4" type="submit">Send this Compliment</button>
+            </div>
+          </div>
+
+        </form>
+
+
+      </div>
+      <!-- /Sent Compliment column  -->
+
+    </div>
+
+</body>
+</html>

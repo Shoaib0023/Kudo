@@ -1,0 +1,60 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.recent-wrapper {
+  overflow-y: scroll;
+  display: block ;
+  padding: 30px;
+  background-color: #687466 ;
+  color: #fbc490;
+  height: 100vh;
+}
+
+
+.recent-inner {
+  margin-top: 8rem ;
+}
+
+
+.send-compliment-wrapper {
+  display: block ;
+  height: 100vh;
+  background-color: #f3ecb8;
+  padding: 30px;
+}
+
+
+.send-compliment-inner {
+  text-align: center ;
+  margin-top: 4.5rem;
+}
+
+
+.sent-heading {
+  font-weight: 400;
+  color: #084177;
+}
+
+.recent-heading {
+  font-weight: 400 ;
+  color: white;
+}
+
+.send-btn {
+  background-color: #084177;
+  color: white;
+}
+
+.send-btn:hover {
+  color: white;
+}
+
+.error {
+  padding: 30px;
+  color: green ;
+}
